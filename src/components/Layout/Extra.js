@@ -17,7 +17,7 @@ import { FeedContext } from '../../context/FeedContext'
 function Extra() {
 
 
-    const { whoFollow, getWhoFollow } = useContext(FeedContext);
+    const { whoFollow } = useContext(FeedContext);
 
     const [tags, setTags] = useState([]);
 
@@ -26,7 +26,7 @@ function Extra() {
 
     useEffect(() => {
 
-        getWhoFollow();
+
         setLoading(false);
 
 
