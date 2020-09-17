@@ -7,16 +7,11 @@ import Router from './Router';
 import { UserContext } from './context/UserContext';
 
 import './styles/index.css';
-import { FeedContext } from './context/FeedContext';
 
 function App() {
 
   const { user } = useContext(UserContext);
-  const { whoFollow, getWhoFollow } = useContext(FeedContext);
 
-  useEffect(() => {
-    getWhoFollow();
-  }, [])
 
   return (
     <>

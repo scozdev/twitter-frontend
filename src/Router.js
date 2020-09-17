@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Profile from './pages/Profile/Profile';
@@ -13,9 +13,15 @@ import Notifications from './pages/Notifications/Notifications';
 import Bookmarks from './pages/Bookmarks/Bookmarks';
 import TweetDetail from './pages/TweetDetail/TweetDetail';
 import Lists from './pages/Lists/Lists';
+import { FeedContext } from './context/FeedContext';
 
 function Router() {
 
+    const { getWhoFollow } = useContext(FeedContext);
+
+    useEffect(() => {
+        getWhoFollow();
+    }, [])
 
     return (
         <BrowserRouter>
