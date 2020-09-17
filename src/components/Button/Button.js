@@ -19,12 +19,12 @@ function BaseButton({ children, ...props }) {
     )
 }
 
-function Button({ full = false, icon, color, isLiked, children, className, ...props }) {
+function Button({ full = false, icon, color, isLiked, children, gray, className, ...props }) {
     const Comp = props.href ? LinkButton : BaseButton
 
     return (
         <Comp
-            className={['button', full && "fullWidth", icon && "button-icon", className].join(' ')}
+            className={['button', full && "fullWidth", gray && "button-gray", icon && "button-icon", className].join(' ')}
             {...props}
         >
             {children}

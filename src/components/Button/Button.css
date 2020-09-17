@@ -29,5 +29,8 @@
     font-size: 22.5px;
   }
 
+  .button-gray{
+    color: var(--input-icon)
+  }
 
  

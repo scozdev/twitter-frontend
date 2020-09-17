@@ -42,16 +42,16 @@ function Tweet({ post, pusername }) {
                 </div>
 
                 <span>
-                    <NavLink to={`/${handle}/status/${_id}`}>
+                    <Link to={`/${handle}/status/${_id}`}>
                         <p>{caption}</p>
-                    </NavLink>
+                    </Link>
                 </span>
 
                 <div className="tags">
                     {tags
                         ? tags.map((tag) => (
-                            <span key={tag} className="tag">
-                                {tag}
+                            <span key={tag} className="tweet--tag">
+                                {`#${tag}`}
                             </span>
                         ))
                         : null}

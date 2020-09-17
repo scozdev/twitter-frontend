@@ -50,3 +50,10 @@
 .isLiked svg {
     color: red;
 }
+.tweet--tag{
+    color: var(--c-theme);
+    font-weight: 700;
+}
+.tweet--tag:not(:first-child){
+    margin-left: 5px;
+}

@@ -1,17 +1,16 @@
 .layout {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    min-height: 100vh;
-    max-width: 670px;
+    height: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    
+
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width: 980px){
     .layout {
         max-width: 1060px;
-        grid-template-columns: auto 1fr 380px;
     }
 }
 @media (min-width: 1270px){

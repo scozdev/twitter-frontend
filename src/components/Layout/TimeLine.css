@@ -1,4 +1,11 @@
 .time-line {
-    border-left: 1px solid var(--c-border-color);
-    border-right: 1px solid var(--c-border-color);
+    width: min(601px, 100%);
+
+
+}
+@media (min-width: 500px){
+    .time-line {
+        border-left: 1px solid var(--c-border-color);
+        border-right: 1px solid var(--c-border-color);
+    }
 }

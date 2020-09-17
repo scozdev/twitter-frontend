@@ -1,12 +1,15 @@
 .sidebar {
-    padding-left: 20px;
-    padding-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+
     position: sticky;
     top: 0;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    max-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -30,5 +33,4 @@
     width: 100%;
     margin-top: auto;
     margin-bottom: 14px;
-    
   }

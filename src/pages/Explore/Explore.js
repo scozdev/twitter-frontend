@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom'
 
 import Button from '../../components/Button/Button'
 import Header from '../../components/Header/Header'
+import News from '../../components/News'
 import Tweet from '../../components/Tweet/Tweet'
 import { More } from '../../components/icons'
 import SearchBox from '../../components/SearchBox/SearchBox'
@@ -14,19 +15,30 @@ import Loading from '../../components/loading'
 
 function Explore({ location }) {
 
+    const [tagsTweet, setTagsTweet] = useState(null)
     const [tags, setTags] = useState(null)
     const [tagsLoading, setTagsLoading] = useState(true)
 
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        client(`/posts${location.search}`)
-            .then((response) => {
-                setTags(response.data);
-                setTagsLoading(false);
-                console.log(response.data)
-            });
 
+        if (location.search) {
+            client(`/posts${location.search}`)
+                .then((response) => {
+                    setTagsTweet(response.data);
+                    setTags(null);
+                });
+
+        } else {
+            client("/posts/tags")
+                .then((response) => {
+                    setTags(response.data);
+                    setTagsTweet(null);
+                });
+        }
+
+        setTagsLoading(false);
 
     }, [location.search])
 
@@ -37,17 +49,19 @@ function Explore({ location }) {
                 <Button icon><More /></Button>
             </Header>
 
-            {tags?.map(post => (
+            {tagsTweet?.map(post => (
                 <Tweet key={post._id} post={post} />
+            ))}
+
+            {tags?.map(tag => (
+                <News className="explore--tags" key={tag} tag={tag} />
             ))}
 
             <div style={{ textAlign: "center" }}>
                 {tagsLoading && <Loading />}
-                {tags?.length === 0 && 'etiket yok :/ .'}
+                {!tagsLoading && tagsTweet?.length === 0 && 'Tweet yok :/ .'}
             </div>
 
-
-            <div style={{ height: '1000px' }}></div>
 
         </>
     )

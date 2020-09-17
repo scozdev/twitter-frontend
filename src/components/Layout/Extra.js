@@ -12,23 +12,23 @@ import SearchBox from '../SearchBox/SearchBox'
 
 import { client } from '../../utils'
 import { UserContext } from '../../context/UserContext'
+import { FeedContext } from '../../context/FeedContext'
 
 function Extra() {
 
 
-    const { user } = useContext(UserContext);
-    const [users, setUsers] = useState([]);
+    const { whoFollow, getWhoFollow } = useContext(FeedContext);
+
     const [tags, setTags] = useState([]);
 
     const [loading, setLoading] = useState(true)
     const [loadingTags, setLoadingTags] = useState(true)
 
     useEffect(() => {
-        client("/users")
-            .then((response) => {
-                setUsers(response.data.filter((user) => !user.isFollowing));
-                setLoading(false);
-            });
+
+        getWhoFollow();
+        setLoading(false);
+
 
 
         client("/posts/tags")
@@ -47,19 +47,21 @@ function Extra() {
                 <List
                     title={`Who to follow`}
                     icon={<Options />}
+                    src="lists"
                 >
-                    {users.slice(0, 4).map((user) => (
+                    {whoFollow.slice(0, 4).map((user) => (
                         <FollowSuggestion key={user._id} user={user} />
                     ))}
 
                     <div style={{ textAlign: "center" }}>
                         {loading && <Loading />}
-                        {!loading && users.length === 0 && 'Takip edecek başka biri kalmadı .'}
+                        {!loading && whoFollow.length === 0 && 'Takip edecek başka biri kalmadı .'}
                     </div>
                 </List>
 
                 <List
                     title="Trends for you"
+                    src="explore"
                 >
                     {tags.map((tag) => (
                         <News key={tag} tag={tag} />

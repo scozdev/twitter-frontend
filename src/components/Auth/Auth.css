@@ -6,12 +6,11 @@
     width: 100%;
 }
 .auth-page__container form {
-    min-width: 380px;
+    width: 380px;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
 }
-
 
 .form-control input {
     width: 100%;

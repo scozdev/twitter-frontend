@@ -1,0 +1,7 @@
+.list__follow {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--c-border-color);
+}
+.list__follow:hover {
+    background-color: var(--trends-hover-bg);
+}

@@ -4,11 +4,11 @@ import TextBody from '../Text/body';
 
 import './News.css';
 
-function List({ tag }) {
+function List({ tag, className }) {
     return (
-        <Link to={`explore?tag=${tag}`} className="extra__news">
+        <Link to={`explore?tag=${tag}`} className={['extra__news', className].join(' ')}>
+            <TextBody gray>Trending in Turkey</TextBody>
             <TextBody bold>{`#${tag}`}</TextBody>
-            <TextBody gray>{`#${tag}`}</TextBody>
         </Link>
     )
 }

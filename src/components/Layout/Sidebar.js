@@ -15,8 +15,6 @@ function Sidebar({ flat }) {
 
     const { setUser, user } = useContext(UserContext);
 
-
-
     const handleLogout = () => {
         setUser(null)
         localStorage.removeItem('user')

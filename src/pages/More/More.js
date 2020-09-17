@@ -1,5 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
+
 import Header from '../../components/Header/Header'
+import TextTitle from '../../components/Text/title'
+
 
 import './More.css'
 
@@ -7,8 +10,6 @@ import { ThemeContext } from '../../context/ThemeContext'
 
 import ThemeButton from '../../components/ThemeButton/ThemeButton'
 import Button from '../../components/Button/Button'
-import TextTitle from '../../components/Text/title'
-
 
 const THEME = {
     light: 'Light',

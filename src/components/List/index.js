@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 
 import './List.css';
 
-function List({ title, icon, children }) {
+function List({ title, icon, children, src }) {
     return (
         <div className="list">
             <div className="list__item">
@@ -17,7 +18,7 @@ function List({ title, icon, children }) {
             </div>
 
             <div className="trend-more">
-                <a href="/#">Show more</a>
+                <Link to={src}>Show more</Link>
             </div>
         </div>
     )

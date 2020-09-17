@@ -12,6 +12,7 @@ import Explore from './pages/Explore/Explore';
 import Notifications from './pages/Notifications/Notifications';
 import Bookmarks from './pages/Bookmarks/Bookmarks';
 import TweetDetail from './pages/TweetDetail/TweetDetail';
+import Lists from './pages/Lists/Lists';
 
 function Router() {
 
@@ -23,6 +24,7 @@ function Router() {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/more" component={More} />
                     <Route exact path="/explore" component={Explore} />
+                    <Route exact path="/lists" component={Lists} />
                     <Route exact path="/notifications" component={Notifications} />
                     <Route exact path="/bookmarks" component={Bookmarks} />
                     <Route path="/accounts/edit" component={EditProfile} />

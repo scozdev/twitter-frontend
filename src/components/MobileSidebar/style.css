@@ -1,0 +1,22 @@
+.mobile-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 888;
+
+    background-color: var(--c-primary);
+    width: 100%;
+    border-top: 1px solid var(--c-border-color);
+
+    display: flex;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    padding: 8px min(40px, max(10vw, 10px));
+}
+.mobile-sidebar svg {
+    font-size: 26px;
+}
+.s-selected{
+    color: var(--c-theme);
+}

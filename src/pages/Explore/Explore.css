@@ -2,3 +2,10 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.explore--tags {
+    border-bottom: 1px solid var(--c-border-color);
+    padding: 10px;
+}
+.explore--tags:hover {
+ background-color: var(--trends-hover-bg);;
+}

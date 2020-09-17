@@ -11,6 +11,7 @@
     background-color: transparent;
     padding-left: 20px;
     color: var(--c-text-color);
+    width: 100%;
 }
 
 .search-bar:focus-within {
