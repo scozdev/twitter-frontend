@@ -1,0 +1,21 @@
+.layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    min-height: 100vh;
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+@media (min-width: 980px){
+    .layout {
+        max-width: 1060px;
+        grid-template-columns: auto 1fr 380px;
+    }
+}
+@media (min-width: 1270px){
+    .layout{
+        max-width: 1280px;
+    }
+}

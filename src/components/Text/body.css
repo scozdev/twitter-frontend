@@ -1,0 +1,7 @@
+.text-body.gray{
+    font-size: 13px;
+    color: var(--input-icon);
+}
+.bold {
+    font-weight: bold;
+}

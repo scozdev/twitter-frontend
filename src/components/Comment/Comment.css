@@ -1,0 +1,17 @@
+.post-comment {
+    display: flex;
+    align-items: center;
+
+    margin: 10px;
+}
+.post-comment--body{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 10px;
+}
+
+.post-comment--body > div:first-child > *:last-child{
+    color: var(--c-gray);
+    margin-left: 10px;
+}

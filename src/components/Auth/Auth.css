@@ -1,0 +1,31 @@
+.auth-page__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+.auth-page__container form {
+    min-width: 380px;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.form-control input {
+    width: 100%;
+    border-bottom: 3px solid var(--c-gray);
+    height: 50px;
+    padding:0 5px;
+    margin: 5px 0;
+}
+.form-control input::placeholder {
+}
+.auth-page__logo {
+    display: flex;
+    justify-content: center;
+}
+.auth-page__logo svg {
+    font-size: 36px
+}

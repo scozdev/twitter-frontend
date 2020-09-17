@@ -1,0 +1,45 @@
+.tweet-editor {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 5px 15px;
+
+    border-bottom: 10px solid var(--c-border-color);
+}
+.tweet-editor--avatar{
+    margin-top: 5px;
+}
+.tweet-editor__body {
+    width: 100%;
+    margin-left: 10px;
+}
+.tweet-editor__body textarea::placeholder {
+    font-size: 19px;
+    color: #9197a3;
+}
+.tweet-editor textarea {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 19px;
+    
+    background-color: transparent;
+    color: var(--c-text-color);
+
+    width: 100%;
+    resize: none;
+}
+
+.tweet-editor__body--secondary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.tweet-editor__body--icons {
+    margin-left: -5px;
+    display: flex;
+    align-items: center;
+
+}
+#file-input{
+    display: none;
+}

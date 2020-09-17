@@ -1,0 +1,4 @@
+.time-line {
+    border-left: 1px solid var(--c-border-color);
+    border-right: 1px solid var(--c-border-color);
+}

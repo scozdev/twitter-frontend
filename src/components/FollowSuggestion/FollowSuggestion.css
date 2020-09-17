@@ -1,0 +1,23 @@
+.extra__FollowSuggestion{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.extra__FollowSuggestion > div {
+  display: flex;
+  align-items: center;
+}
+
+.extra__FollowSuggestion--info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.extra__FollowSuggestion--info > strong {
+  font-size: 14px;
+}
+.extra__FollowSuggestion--info > span {
+  font-size: 14px;
+  color: var(--gray);
+}

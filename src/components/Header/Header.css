@@ -1,0 +1,13 @@
+.timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    height: 53px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.timeline-header.border {
+    border-bottom: 1px solid rgb(230, 236, 240);
+}

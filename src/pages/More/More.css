@@ -1,0 +1,15 @@
+.more-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 200px;
+}
+.more-page > div {
+    display: flex;
+    padding: 30px;
+    border: 1px solid var(--c-border-color);
+}
+.more-page > div > * {
+    margin: 10px;
+}

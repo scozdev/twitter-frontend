@@ -1,0 +1,9 @@
+.text-title{
+    font-size: 19px;
+}
+.text-title--bold{
+    font-weight: bold;
+}
+.xbold {
+    font-weight: 800;
+}

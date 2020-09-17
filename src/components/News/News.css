@@ -1,0 +1,11 @@
+.extra__news {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+
+  text-decoration: none;
+}
+
+.extra__news > span {
+  margin-bottom: 3px;
+}

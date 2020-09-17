@@ -1,0 +1,33 @@
+.avatar {
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.avatar img {
+    display: block;
+    width: 100%;
+    border-radius: 990px;
+}
+.avatar--small {
+    width: 39px;
+    height: 39px;
+}
+.avatar--medium {
+    width: 49px;
+    height: 49px;
+}
+.avatar--large {
+    width: 59px;
+    height: 59px;
+}
+.avatar--large {
+    width: 59px;
+    height: 59px;
+}
+.avatar--xlarge {
+    width: 134px;
+    height: 134px;
+}
+
+.avatar-border img {
+    border: 5px solid #fff;
+}

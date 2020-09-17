@@ -1,0 +1,57 @@
+:root {
+    --c-primary: #fff;
+    --c-text-color: #000;
+    --c-border-color: rgb(230, 236, 240);
+    --c-gray: #6e767d;
+    --c-dark-gray: #202327;
+    
+    --input-back:#e6ecf0;
+    --extra-back: rgb(245, 248, 250);
+    --trends-hover-bg: rgba(0, 0, 0, 0.03);
+
+    --c-theme: rgba(29, 161, 242, 1);
+    --c-theme-hover: rgba(26, 145, 218, 1);
+    --c-theme-hover2: rgb(29, 161, 242);
+    --c-theme-10: rgba(29, 161, 242, 0.1);
+    --fade: 120ms;
+
+    --tweet-text: rgb(20, 23, 26);
+    
+    --input-icon :rgb(101, 119, 134);
+    
+    --color-lightGray: #8899a6;
+    --profile-top: rgb(204, 214, 221);
+
+    --primary-line: #38444d;
+    /* --input-primary: rgb(37, 51, 65); */
+    --font: 15px;
+
+    --small: 13px;
+    --medium: 15px;
+    --large: 19px;
+
+  }
+  
+  .dim:root {
+    --c-primary: rgb(21, 32, 43);
+    --c-text-color: #fff;
+    --c-border-color: #2f3336;
+    --c-gray: #6e767d;
+    --c-dark-gray: #202327;
+    
+    --input-back:rgb(37, 51, 65);
+    --extra-back: rgb(25, 39, 52);
+    --trends-hover-bg: rgba(255, 255, 255, 0.03);
+  }
+  
+  .dark:root {
+    --c-primary: #000;
+    --c-text-color: #fff;
+    --c-border-color: #2f3336;
+    --c-gray: #6e767d;
+    --c-dark-gray: #202327;
+
+    --input-back:rgb(37, 51, 65);
+    --extra-back: rgb(21, 24, 28);
+    --trends-hover-bg: rgba(255, 255, 255, 0.03);
+  }

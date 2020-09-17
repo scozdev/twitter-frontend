@@ -1,0 +1,15 @@
+.layout-explore {
+    margin-left: 30px;
+    min-width: 350px;
+}
+.layout-explore--stick {
+    position: sticky;
+    top: 5px;
+}
+.layout-explore--search {
+    position: sticky;
+    top: 5px;
+    z-index: 999;
+    margin-top: 5.2px;
+    margin-bottom: 15px;
+}

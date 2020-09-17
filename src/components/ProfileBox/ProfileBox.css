@@ -1,0 +1,25 @@
+.profil-box {
+    padding: 10px;
+    min-width: 100%;
+}
+
+.profil-box:hover {
+    color: var(--c-text-color);
+}
+  
+.profil-box__body {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.profil-box__body * {
+    display: block;
+}
+  
+  .profil-box__slug {
+    color: var(--c-gray);
+  }
+  
+  .profil-box__icon {
+    margin-left: auto;
+  }
