@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
 import Header from '../../components/Header/Header'
 import Loading from '../../components/loading'
@@ -10,8 +11,6 @@ import { FeedContext } from '../../context/FeedContext'
 import { client } from '../../utils'
 
 import './Home.css'
-import { toast } from 'react-toastify'
-import TextBody from '../../components/Text/body'
 import Button from '../../components/Button/Button'
 import TextTitle from '../../components/Text/title'
 
@@ -24,15 +23,21 @@ function Home() {
 
         window.scrollTo(0, 0);
 
+        setLoading(true);
+
         client("/users/feed")
             .then((res) => {
                 setFeed(res.data);
-
-
+                setLoading(false);
             })
-            .catch(res => toast.error(res));
+            .catch((res) => {
+                toast.error(res)
+                setLoading(false);
+            });
 
-        setLoading(false);
+
+
+
     }, [])
 
     return (
@@ -50,14 +55,13 @@ function Home() {
                 <Tweet key={post._id} post={post} />
             ))}
 
-
-            {loading &&
-                <div className="loading">
-                    <Loading />
-                </div>
+            {loading && <div className="loading">
+                <Loading />
+            </div>
             }
 
-            { !feed.length && !loading && (
+
+            { feed && feed.length == 0 && !loading && (
                 <div className="loading">
                     <TextTitle>Başkalarının Gönderilerini Görmek İçin Onları Takip Et..</TextTitle>
                 </div>

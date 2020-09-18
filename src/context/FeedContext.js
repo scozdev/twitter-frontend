@@ -4,7 +4,7 @@ import { client } from "../utils";
 export const FeedContext = createContext(null);
 
 export const FeedProvider = ({ children }) => {
-    const [feed, setFeed] = useState([]);
+    const [feed, setFeed] = useState(null);
 
     const [whoFollow, setWhoFollow] = useState([]);
 

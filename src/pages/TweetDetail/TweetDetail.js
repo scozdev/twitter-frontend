@@ -60,6 +60,8 @@ function TweetDetail({ }) {
                     <>
                         <Tweet post={tweet} />
                         <SearchBox
+                            text='Tweet your reply'
+                            icon={false}
                             onChange={(e) => setCommentText(e.target.value)}
                             value={commentText}
                             onKeyPress={handleAddComment}

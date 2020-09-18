@@ -20,6 +20,18 @@ This is the frontend repository, built with React. If you are looking for the ba
 - npm
 - mongodb
 
+## :scroll: Todo
+
+- [x] Login/Signup
+- [x] New tweet
+- [x] Like
+- [x] Comment
+- [x] View Profile
+- [x] Light theme / Dim theme / Dark theme
+- [ ] Search
+- [ ] Edit Profile
+- [ ] Retweet
+
 ## :cd: How to run local
 
 At the root of your project create an .env file with the following contents:
