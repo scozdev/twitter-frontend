@@ -9,7 +9,7 @@
     padding-left: 20px;
     padding-right: 20px;
     
-    max-height: 100vh;
+    height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
   }

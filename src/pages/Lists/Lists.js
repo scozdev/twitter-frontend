@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import { FeedContext } from '../../context/FeedContext'
 
@@ -10,8 +10,11 @@ import './Lists.css'
 
 function Lists() {
 
-    const { whoFollow, getWhoFollow } = useContext(FeedContext);
+    const { whoFollow } = useContext(FeedContext);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
         <>

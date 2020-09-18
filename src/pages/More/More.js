@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import Header from '../../components/Header/Header'
 import TextTitle from '../../components/Text/title'
@@ -25,6 +25,9 @@ function More() {
         localStorage.setItem('THEME', theme)
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
 

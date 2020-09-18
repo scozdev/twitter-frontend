@@ -39,8 +39,9 @@ function Login({ setAuth }) {
             localStorage.setItem("token", token);
         } catch (err) {
             return toast.error(err.message);
+        } finally {
+            setLoading(false)
         }
-        setLoading(false)
         const user = await client("/auth/me");
         localStorage.setItem("user", JSON.stringify(user.data));
         setUser(user.data);
