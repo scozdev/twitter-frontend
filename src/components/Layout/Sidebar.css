@@ -6,31 +6,32 @@
     position: sticky;
     top: 0;
     
-    padding-left: 20px;
-    padding-right: 20px;
     
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
   }
-  
+
+.sidebar__tweet {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.sidebar__profile {
+  width: 90%;
+  margin-top: auto;
+  margin-bottom: 14px;
+}
+
   @media (min-width: 1270px) {
     .sidebar {
         align-items: flex-start;
-        padding-right: 46px;
+        width: 250px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-  }
-  .sidebar__tweet {
-    margin-top: 16px;
-    margin-bottom: 20px;
-  }
-  @media (min-width: 1270px) {
     .sidebar__tweet {
-        width: 100%;
+      width: 80%;
     }
-  }
-  .sidebar__profile {
-    width: 100%;
-    margin-top: auto;
-    margin-bottom: 14px;
-  }
+  
+}
+ 

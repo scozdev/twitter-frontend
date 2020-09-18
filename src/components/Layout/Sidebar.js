@@ -26,7 +26,7 @@ function Sidebar({ flat }) {
             <Navigation flat={flat} />
 
             <div className="sidebar__tweet">
-                <ThemeButton primary size="large" full={!flat} >
+                <ThemeButton href='/' primary size="large" full={!flat} >
                     {flat ? <Tweet /> : 'Tweet'}
                 </ThemeButton>
             </div>

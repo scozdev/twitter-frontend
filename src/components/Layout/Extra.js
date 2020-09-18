@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useLocation as locations } from "react-router-dom";
 
 import './Extra.css'
 
@@ -16,26 +17,11 @@ import { FeedContext } from '../../context/FeedContext'
 
 function Extra() {
 
+    let router = locations();
 
-    const { whoFollow } = useContext(FeedContext);
-
-    const [tags, setTags] = useState([]);
-
-    const [loading, setLoading] = useState(true)
-    const [loadingTags, setLoadingTags] = useState(true)
+    const { whoFollow, tags } = useContext(FeedContext);
 
     useEffect(() => {
-
-
-        setLoading(false);
-
-
-
-        client("/posts/tags")
-            .then((response) => {
-                setTags(response.data);
-                setLoadingTags(false);
-            });
 
     }, []);
 
@@ -44,22 +30,8 @@ function Extra() {
             <SearchBox className="layout-explore--search" />
 
             <div className="layout-explore--stick">
-                <List
-                    title={`Who to follow`}
-                    icon={<Options />}
-                    src="lists"
-                >
-                    {whoFollow.slice(0, 4).map((user) => (
-                        <FollowSuggestion key={user._id} user={user} />
-                    ))}
 
-                    <div style={{ textAlign: "center" }}>
-                        {loading && <Loading />}
-                        {!loading && whoFollow.length === 0 && 'Takip edecek başka biri kalmadı .'}
-                    </div>
-                </List>
-
-                <List
+                {router.pathname !== '/explore' && <List
                     title="Trends for you"
                     src="explore"
                 >
@@ -67,10 +39,30 @@ function Extra() {
                         <News key={tag} tag={tag} />
                     ))}
                     <div style={{ textAlign: "center" }}>
-                        {loadingTags && <Loading />}
-                        {!loadingTags && tags.length === 0 && 'Henüz etiket yok :/ .'}
+                        {!tags && <Loading />}
+                        {tags?.length === 0 && 'Henüz etiket yok :/ .'}
                     </div>
-                </List>
+                </List>}
+
+
+                {router.pathname !== '/lists' &&
+                    <List
+                        title={`Who to follow`}
+                        icon={<Options />}
+                        src="lists"
+                    >
+                        {whoFollow?.slice(0, 4).map((user) => (
+                            <FollowSuggestion key={user._id} user={user} />
+                        ))}
+
+                        <div style={{ textAlign: "center" }}>
+                            {!whoFollow && <Loading />}
+                            {whoFollow?.length === 0 && 'Takip edecek başka biri kalmadı .'}
+                        </div>
+                    </List>
+                }
+
+
             </div>
         </section>
     )

@@ -25,7 +25,7 @@ function FollowSuggestion({ user, fullName = "asd", icon = true }) {
                 </div>
             </div>
             {icon &&
-                <Follow isFollowing={user.isFollowing} userId={user._id}>
+                <Follow isFollowing={user.isFollowing} userId={user._id} username={user.username}>
                     Takip
                 </Follow>
             }

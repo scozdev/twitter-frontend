@@ -14,13 +14,26 @@ import Bookmarks from './pages/Bookmarks/Bookmarks';
 import TweetDetail from './pages/TweetDetail/TweetDetail';
 import Lists from './pages/Lists/Lists';
 import { FeedContext } from './context/FeedContext';
+import { client } from './utils';
 
 function Router() {
 
-    const { getWhoFollow } = useContext(FeedContext);
+    const { setWhoFollow, setTags } = useContext(FeedContext);
 
     useEffect(() => {
-        getWhoFollow();
+
+        client("/users")
+            .then((response) => {
+                setWhoFollow(response.data.filter((user) => !user.isFollowing));
+            });
+
+
+        client("/posts/tags")
+            .then((response) => {
+                setTags(response.data);
+            });
+
+
     }, [])
 
     return (

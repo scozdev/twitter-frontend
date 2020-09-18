@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
 
 
 import Button from '../../components/Button/Button'
@@ -12,12 +11,19 @@ import { client } from '../../utils'
 
 import './Explore.css'
 import Loading from '../../components/loading'
+import { FeedContext } from '../../context/FeedContext'
 
 function Explore({ location }) {
 
+
+    const { tags } = useContext(FeedContext);
+
+    const [searchText, setSearchText] = useState("")
     const [tagsTweet, setTagsTweet] = useState(null)
-    const [tags, setTags] = useState(null)
-    const [tagsLoading, setTagsLoading] = useState(true)
+
+    const tagsFilter = () => {
+        return tags.filter((tag => tag.toLowerCase().indexOf(searchText) !== -1))
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -27,42 +33,34 @@ function Explore({ location }) {
             client(`/posts${location.search}`)
                 .then((response) => {
                     setTagsTweet(response.data);
-                    setTags(null);
-                });
-
-        } else {
-            client("/posts/tags")
-                .then((response) => {
-                    setTags(response.data);
-                    setTagsTweet(null);
                 });
         }
 
-        setTagsLoading(false);
 
     }, [location.search])
 
+
     return (
         <>
+
             <Header border>
-                <SearchBox size='large' className='explore-page__search' />
+                <SearchBox value={searchText} onChange={(e) => setSearchText(e.target.value)} size='large' className='explore-page__search' />
                 <Button icon><More /></Button>
             </Header>
 
-            {tagsTweet?.map(post => (
+            {location.search && tagsTweet?.map(post => (
                 <Tweet key={post._id} post={post} />
             ))}
 
-            {tags?.map(tag => (
+            {!location.search && tagsFilter()?.map(tag => (
                 <News className="explore--tags" key={tag} tag={tag} />
             ))}
 
-            <div style={{ textAlign: "center" }}>
-                {tagsLoading && <Loading />}
-                {!tagsLoading && tagsTweet?.length === 0 && 'Tweet yok :/ .'}
+            <div className='loading'>
+                {!tagsTweet && location.search && <Loading />}
+                {!tags && !location.search && <Loading />}
+                {location.search && tagsTweet && tagsTweet?.length === 0 && 'Tweet yok :/ .'}
             </div>
-
-
         </>
     )
 }

@@ -1,23 +1,16 @@
 import React, { useState, createContext, useEffect } from "react";
-import { client } from "../utils";
 
 export const FeedContext = createContext(null);
 
 export const FeedProvider = ({ children }) => {
     const [feed, setFeed] = useState(null);
 
-    const [whoFollow, setWhoFollow] = useState([]);
+    const [whoFollow, setWhoFollow] = useState(null);
 
-    const getWhoFollow = () => {
-        client("/users")
-            .then((response) => {
-                setWhoFollow(response.data.filter((user) => !user.isFollowing));
-            });
-    }
-
+    const [tags, setTags] = useState([]);
 
     return (
-        <FeedContext.Provider value={{ feed, setFeed, whoFollow, getWhoFollow }}>
+        <FeedContext.Provider value={{ feed, setFeed, whoFollow, setWhoFollow, tags, setTags }}>
             {children}
         </FeedContext.Provider>
     );

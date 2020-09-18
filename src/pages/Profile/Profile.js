@@ -21,7 +21,6 @@ import Avatar from '../../components/Avatar/Avatar'
 import ThemeButton from '../../components/ThemeButton/ThemeButton'
 
 function Profile() {
-  const history = useHistory();
 
   const { handle } = useParams();
   const [profile, setProfile] = useState({});
@@ -65,7 +64,7 @@ function Profile() {
             <Icons.Options />
           </Button>
           <div style={{ marginLeft: '15px' }}>
-            <TextTitle xbold>selçuk özdemir</TextTitle>
+         <TextTitle xbold>{profile.username}</TextTitle>
             <TextBody gray>
               {profile?.posts?.length
                 ? `${profile.posts.length} Tweets`

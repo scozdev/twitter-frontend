@@ -23,6 +23,12 @@
     color: var(--c-text-color);
   }
 
+  @media (min-width: 1000px){
+   body {
+      overflow-y: scroll;
+    }
+  }
+
   .loading {
     height: 300px;
     display: flex;

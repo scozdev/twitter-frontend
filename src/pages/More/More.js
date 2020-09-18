@@ -43,6 +43,7 @@ function More() {
 
                         <ThemeButton
                             key={th}
+                            primary={th === theme}
                             checked={th === theme}
                             name="theme"
                             onClick={(e) => changeTheme(th)}

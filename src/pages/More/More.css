@@ -4,11 +4,15 @@
     justify-content: center;
 
     height: 200px;
+   
 }
 .more-page > div {
     display: flex;
     padding: 30px;
     border: 1px solid var(--c-border-color);
+
+    box-shadow: 3px 2px 3px 3px var(--c-theme);
+
 }
 .more-page > div > * {
     margin: 10px;

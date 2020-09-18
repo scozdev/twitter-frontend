@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  width: 100%;
 }
-.navButton {
-  
+.navButton:not(:first-child) {
+  width: 90%;
+  justify-content: flex-start;
 }
 .navButton + .navButton{
     margin-top: 8px;

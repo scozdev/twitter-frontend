@@ -32,30 +32,30 @@ export const MENU = () => {
       title: 'Explore',
       notify: 0
     },
-    {
-      key: 'notifications',
-      path: '/notifications',
-      icon: <Icon.Notification />,
-      iconSelected: <Icon.NotificationFill />,
-      title: 'Notifications',
-      notify: 0
-    },
-    {
-      key: 'messages',
-      path: '/messages',
-      icon: <Icon.Messages />,
-      iconSelected: <Icon.MessagesFill />,
-      title: 'Messages',
-      notify: 0
-    },
-    {
-      key: 'bookmarks',
-      path: '/bookmarks',
-      icon: <Icon.Bookmark />,
-      iconSelected: <Icon.BookmarkFill />,
-      title: 'Bookmarks',
-      notify: 0
-    },
+    // {
+    //   key: 'notifications',
+    //   path: '/notifications',
+    //   icon: <Icon.Notification />,
+    //   iconSelected: <Icon.NotificationFill />,
+    //   title: 'Notifications',
+    //   notify: 0
+    // },
+    // {
+    //   key: 'messages',
+    //   path: '/messages',
+    //   icon: <Icon.Messages />,
+    //   iconSelected: <Icon.MessagesFill />,
+    //   title: 'Messages',
+    //   notify: 0
+    // },
+    // {
+    //   key: 'bookmarks',
+    //   path: '/bookmarks',
+    //   icon: <Icon.Bookmark />,
+    //   iconSelected: <Icon.BookmarkFill />,
+    //   title: 'Bookmarks',
+    //   notify: 0
+    // },
     {
       key: 'lists',
       path: '/lists',
