@@ -21,14 +21,15 @@ function Home() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        setLoading(true);
         client("/users/feed")
             .then((res) => {
                 setFeed(res.data);
-                setLoading(false);
+
 
             })
             .catch(res => toast.error(res));
+
+        setLoading(false);
     }, [])
 
     return (
@@ -54,7 +55,9 @@ function Home() {
             }
 
             { !feed.length && !loading && (
-                <TextTitle>Başkalarının Gönderilerini Görmek İçin Onları Takip Et..</TextTitle>
+                <div className="loading">
+                    <TextTitle>Başkalarının Gönderilerini Görmek İçin Onları Takip Et..</TextTitle>
+                </div>
             )}
 
         </div>

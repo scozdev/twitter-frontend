@@ -65,7 +65,8 @@ function TweetEditor() {
             post.isMine = true;
             setFeed([post, ...feed]);
             window.scrollTo(0, 0);
-            toast.success("Your post has been submitted successfully");
+            setPreview('')
+            toast.success("Tweet gönderimi başarılı.");
         });
     };
 
