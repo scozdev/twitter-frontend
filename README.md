@@ -37,18 +37,26 @@ Then run <code>npm i</code> and <code>npm start</code> to see the youtube clone 
 
 ![Home](screenshots/home.png)
 
+![Home](screenshots/mobile-home.png)
+
 ### Explore
 
-![Trending](screenshots/explore.png)
+![Explore](screenshots/explore.png)
+
+![Explore](screenshots/mobile-explore.png)
 
 ### Lists
 
-![Watch](screenshots/lists.png)
+![Lists](screenshots/lists.png)
+
+![Lists](screenshots/mobile-lists.png)
 
 ### More
 
-![Suggestions](screenshots/more.png)
+![More](screenshots/more.png)
 
 ### Profile
 
-![Trending](screenshots/profile.png)
+![Profile](screenshots/profile.png)
+
+![Profile](screenshots/mobile-profile.png)
