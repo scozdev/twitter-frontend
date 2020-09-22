@@ -16,7 +16,7 @@ function Tweet({ post, pusername }) {
     const [likedState, setLiked] = useState(isLiked);
     const [likesState, setLikes] = useState(likesCount);
 
-    const handle = user?.username
+    const handle = user?.username;
 
     const handleToggleLike = () => {
         if (likedState) {
@@ -50,9 +50,9 @@ function Tweet({ post, pusername }) {
                 <div className="tags">
                     {tags
                         ? tags.map((tag) => (
-                            <span key={tag} className="tweet--tag">
+                            <Link key={tag} to={`/explore?tag=${tag}`} className="tweet--tag">
                                 {`#${tag}`}
-                            </span>
+                            </Link>
                         ))
                         : null}
                 </div>

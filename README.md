@@ -41,7 +41,10 @@ REACT_APP_BACKEND_URL=<YOUR_BACKEND_URL>
 REACT_APP_CLOUDINARY_ENDPOINT=https://api.cloudinary.com/v1_1/<YOUR_CLOUD_NAME>
 ```
 
-Then run <code>npm i</code> and <code>npm start</code> to see the youtube clone in action
+```
+- npm install  
+- npm run dev
+```
 
 ## UI
 

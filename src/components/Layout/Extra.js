@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useLocation as locations } from "react-router-dom";
+import { useHistory, useLocation as locations } from "react-router-dom";
 
 import './Extra.css'
 
@@ -16,18 +16,31 @@ import { UserContext } from '../../context/UserContext'
 import { FeedContext } from '../../context/FeedContext'
 
 function Extra() {
-
+    const history = useHistory()
     let router = locations();
 
     const { whoFollow, tags } = useContext(FeedContext);
 
-    useEffect(() => {
+    const [searchText, setSearchText] = useState("");
 
-    }, []);
+
+    const handleAddSearch = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+
+            history.push(`/explore?tag=${searchText}`)
+
+            setSearchText('')
+        }
+    }
 
     return (
         <section className="layout-explore">
-            <SearchBox className="layout-explore--search" />
+
+            <SearchBox onChange={(e) => setSearchText(e.target.value)}
+                value={searchText}
+                onKeyPress={handleAddSearch}
+                className="layout-explore--search" />
 
             <div className="layout-explore--stick">
 
@@ -35,12 +48,12 @@ function Extra() {
                     title="Trends for you"
                     src="explore"
                 >
-                    {tags.map((tag) => (
+                    {tags.slice(0, 4).map((tag) => (
                         <News key={tag} tag={tag} />
                     ))}
                     <div style={{ textAlign: "center" }}>
                         {!tags && <Loading />}
-                        {tags?.length === 0 && 'Henüz etiket yok :/ .'}
+                        {tags && tags?.length === 0 && 'Henüz etiket yok :/ .'}
                     </div>
                 </List>}
 

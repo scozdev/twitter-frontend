@@ -13,7 +13,7 @@ import { Media, Gif, Question, Emoji } from '../icons'
 import './TweetEditor.css'
 
 function TweetEditor() {
-    const { feed, setFeed } = useContext(FeedContext);
+    const { feed, setFeed, tags, setTags } = useContext(FeedContext);
 
     const [preview, setPreview] = useState("");
     const [postImage, setPostImage] = useState("");
@@ -39,12 +39,11 @@ function TweetEditor() {
             return toast.error("Please write something");
         }
 
-        const tags = textTweet
+        const tag = textTweet
             .split(" ")
             .filter((caption) => caption.startsWith("#"))
             .map((val) => val.slice(1, val.length));
 
-        console.log(tags)
         const cleanedCaption = textTweet
             .split(" ")
             .filter((caption) => !caption.startsWith("#"))
@@ -55,7 +54,7 @@ function TweetEditor() {
         const newPost = {
             caption: cleanedCaption,
             files: [postImage],
-            tags,
+            tags: tag,
         };
 
         client(`/posts`, { body: newPost }).then((res) => {
@@ -66,6 +65,15 @@ function TweetEditor() {
             setFeed([post, ...feed]);
             window.scrollTo(0, 0);
             setPreview('')
+
+
+            tag.forEach((tg) => {
+                if (!tags.includes(tg)) {
+                    setTags([...tg, ...tags])
+                }
+            });
+
+
             toast.success("Tweet gönderimi başarılı.");
         });
     };
