@@ -69,10 +69,9 @@ function TweetEditor() {
 
             tag.forEach((tg) => {
                 if (!tags.includes(tg)) {
-                    setTags([...tg, ...tags])
+                    setTags([tg, ...tags])
                 }
             });
-
 
             toast.success("Tweet gönderimi başarılı.");
         });
