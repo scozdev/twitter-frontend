@@ -43,7 +43,7 @@ REACT_APP_CLOUDINARY_ENDPOINT=https://api.cloudinary.com/v1_1/<YOUR_CLOUD_NAME>
 
 ```
 - npm install  
-- npm run dev
+- npm run start
 ```
 
 ## UI
