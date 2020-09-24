@@ -1,24 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import React, {  useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 import Header from '../../components/Header/Header'
 import Loading from '../../components/loading'
 import * as Icons from '../../components/icons'
 import Tweet from '../../components/Tweet/Tweet'
-
 import TextTitle from '../../components/Text/title'
 import TextBody from '../../components/Text/body'
-
-import {timeSince} from '../../utils'
-
-
-import './Profile.css'
-import { client } from '../../utils'
 import Follow from '../../components/Follow/Follow'
 import Button from '../../components/Button/Button'
-import { toast } from 'react-toastify'
 import Avatar from '../../components/Avatar/Avatar'
 import ThemeButton from '../../components/ThemeButton/ThemeButton'
+
+import { client } from '../../utils'
+
+import './Profile.css'
+
 
 function Profile() {
 
@@ -64,7 +61,7 @@ function Profile() {
             <Icons.Options />
           </Button>
           <div style={{ marginLeft: '15px' }}>
-         <TextTitle xbold>{profile.username}</TextTitle>
+         <TextTitle xbold>{profile.fullname ?? profile.username}</TextTitle>
             <TextBody gray>
               {profile?.posts?.length
                 ? `${profile.posts.length} Tweets`
@@ -101,7 +98,7 @@ function Profile() {
         </div>
 
         <div className="profile-page__detail">
-          <TextTitle xbold>{profile?.username}</TextTitle>
+          <TextTitle xbold>{profile.fullname ?? profile?.username}</TextTitle>
           <TextBody>@{profile?.username}</TextBody>
           <TextBody>{profile.createdAt}</TextBody>
           <div className='profile-page__detail--b'>

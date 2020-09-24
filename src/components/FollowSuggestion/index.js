@@ -8,7 +8,7 @@ import TextBody from '../Text/body'
 import './FollowSuggestion.css';
 import Follow from '../Follow/Follow';
 
-function FollowSuggestion({ user, fullName = "asd", icon = true }) {
+function FollowSuggestion({ user, icon = true }) {
     const history = useHistory()
 
 
@@ -21,7 +21,7 @@ function FollowSuggestion({ user, fullName = "asd", icon = true }) {
 
                     <Link to={`${user.username}`}><TextBody bold>{user.username}</TextBody></Link>
 
-                    <TextBody>{fullName}</TextBody>
+                    <TextBody>{user.fullname ?? user.username}</TextBody>
                 </div>
             </div>
             {icon &&

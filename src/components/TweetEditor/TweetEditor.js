@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import TextareaAutosize from "react-textarea-autosize";
 import { toast } from "react-toastify";
+import { Picker } from 'emoji-mart'
 
 import { FeedContext } from "../../context/FeedContext";
 import { uploadImage, client } from '../../utils'
@@ -18,6 +19,7 @@ function TweetEditor() {
     const [preview, setPreview] = useState("");
     const [postImage, setPostImage] = useState("");
     const [textTweet, setTextTweet] = useState("");
+    const [toggleEmoji, setToggleEmoji] = useState(false);
 
     const handleUploadImage = (e) => {
         if (e.target.files[0]) {
@@ -77,6 +79,13 @@ function TweetEditor() {
         });
     };
 
+    const addEmoji = e => {
+        let sym = e.unified.split('-')
+        let codesArray = []
+        sym.forEach(el => codesArray.push('0x' + el))
+        let emoji = String.fromCodePoint(...codesArray)
+        setTextTweet(textTweet + emoji)
+    }
     return (
         <div className="tweet-editor">
             <Avatar className="tweet-editor--avatar" size='medium' />
@@ -101,15 +110,21 @@ function TweetEditor() {
                         </label>
                         <input id="file-input" accept="image/*" type="file" onChange={handleUploadImage} />
 
-                        <Button icon>
-                            <Gif />
-                        </Button>
+                        <label htmlFor="file-input" style={{ cursor: "pointer" }}>
+                            <Button icon style={{ pointerEvents: "none" }} >
+                                <Gif />
+                            </Button>
+                        </label>
+
                         <Button icon>
                             <Question />
                         </Button>
-                        <Button icon>
-                            <Emoji />
-                        </Button>
+                        <div style={{ position: 'relative' }}>
+                            <Button icon onClick={() => setToggleEmoji(!toggleEmoji)}  >
+                                <Emoji />
+                            </Button>
+                            {toggleEmoji && <Picker onSelect={addEmoji} style={{ position: 'absolute', top: '20px', left: '20px' }} />}
+                        </div>
                     </div>
                     <ThemeButton primary onClick={handleSubmitPost}>Tweet</ThemeButton>
                 </div>

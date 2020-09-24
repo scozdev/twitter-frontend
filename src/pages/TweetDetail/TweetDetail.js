@@ -13,7 +13,6 @@ import Comment from '../../components/Comment/Comment';
 
 
 function TweetDetail({ }) {
-    const history = useHistory();
     const params = useParams()
 
     const [tweet, setTweet] = useState(null);

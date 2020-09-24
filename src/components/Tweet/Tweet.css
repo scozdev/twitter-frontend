@@ -1,7 +1,4 @@
 .page-tweet {
-    display: flex;
-    justify-content: flex-start;
-
     cursor: pointer;
 
     padding-top: 10px;
@@ -9,6 +6,18 @@
     padding-left: 15px;
 
     border-bottom: 1px solid var(--c-border-color);
+}
+.page-tweet__container{
+    display: flex;
+    justify-content: flex-start;
+}
+.page-tweet__retweet{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    color:var(--input-icon);
 }
 .page-tweet:hover {
     background-color: var(--extra-back);
@@ -39,6 +48,10 @@
     justify-content: space-between;
     margin-left: -10px;
 }
+.page-tweet__body--stats > * {
+    display: flex;
+    align-items: center;
+}
 .page-tweet__body--stats svg {
     color: rgb(101, 119, 134);
 }
@@ -47,8 +60,17 @@
     display: inline-block;
     margin-top: 10px;
 }
-.isLiked svg {
+.page-tweet .isLiked  {
     color: red;
+}
+.page-tweet .isLiked svg {
+    color: red;
+}
+.page-tweet .isRetweet  {
+    color: rgb(23, 191, 99);
+}
+.page-tweet .isRetweet svg {
+    color: rgb(23, 191, 99);
 }
 .tweet--tag{
     color: var(--c-theme);
@@ -57,3 +79,5 @@
 .tweet--tag:not(:first-child){
     margin-left: 5px;
 }
+
+

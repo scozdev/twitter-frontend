@@ -1,0 +1,8 @@
+.edit-profile__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.edit-profile__container > * {
+    margin: 10px 0;
+}

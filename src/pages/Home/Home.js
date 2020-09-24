@@ -24,6 +24,7 @@ function Home() {
         window.scrollTo(0, 0);
 
         setLoading(true);
+        setFeed(null)
 
         client("/users/feed")
             .then((res) => {
@@ -35,9 +36,6 @@ function Home() {
                 setLoading(false);
             });
 
-
-
-
     }, [])
 
     return (
@@ -48,8 +46,8 @@ function Home() {
                     <Icons.TimelineProp />
                 </Button>
             </Header>
-            <TweetEditor />
 
+            <TweetEditor />
 
             {feed?.map((post) => (
                 <Tweet key={post._id} post={post} />

@@ -8,10 +8,9 @@ import FollowSuggestion from '../FollowSuggestion'
 import News from '../News'
 import Loading from '../loading'
 
-import { More, Options } from '../icons'
+import { Options } from '../icons'
 import SearchBox from '../SearchBox/SearchBox'
 
-import { client } from '../../utils'
 import { UserContext } from '../../context/UserContext'
 import { FeedContext } from '../../context/FeedContext'
 
@@ -28,7 +27,7 @@ function Extra() {
         if (e.key === 'Enter') {
             e.preventDefault();
 
-            history.push(`/explore?tag=${searchText}`)
+            history.push(`/${searchText}`)
 
             setSearchText('')
         }
@@ -51,10 +50,9 @@ function Extra() {
                     {tags.slice(0, 4).map((tag) => (
                         <News key={tag} tag={tag} />
                     ))}
-                    <div style={{ textAlign: "center" }}>
-                        {!tags && <Loading />}
-                        {tags && tags?.length === 0 && 'Henüz etiket yok :/ .'}
-                    </div>
+
+                    {!tags && <div style={{ textAlign: "center" }}><Loading /> </div>}
+
                 </List>}
 
 

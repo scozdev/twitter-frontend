@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { timeSince } from '../../utils'
 import Avatar from '../Avatar/Avatar'
 import TextBody from '../Text/body'
@@ -7,7 +8,7 @@ import './Comment.css'
 
 function Comment({ comment }) {
     return (
-        <div className="post-comment">
+        <Link to={`/${comment.user.username}`} className="post-comment">
             <Avatar src={comment.user.avatar} />
             <div className="post-comment--body">
                 <div>
@@ -20,7 +21,7 @@ function Comment({ comment }) {
                 </p>
             </div>
 
-        </div>
+        </Link>
     )
 }
 

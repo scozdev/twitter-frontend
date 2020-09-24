@@ -7,6 +7,7 @@ import Router from './Router';
 import { UserContext } from './context/UserContext';
 
 import './styles/index.css';
+import 'emoji-mart/css/emoji-mart.css'
 
 function App() {
 

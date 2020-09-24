@@ -16,9 +16,6 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId, userna
 
     const handleFollow = () => {
 
-
-
-
         if (followingState) {
             setFollowingState(false);
             if (decFollowers) {
@@ -40,7 +37,6 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId, userna
                     })
                     .catch((err) => console.log(err));
             }
-
         }
 
 
@@ -50,7 +46,7 @@ const Follow = ({ nobtn, isFollowing, incFollowers, decFollowers, userId, userna
                 .then((response) => {
                     setWhoFollow(response.data.filter((user) => !user.isFollowing));
                 });
-        }, 3000);
+        }, 2500);
 
 
     };

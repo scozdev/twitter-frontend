@@ -28,9 +28,9 @@ This is the frontend repository, built with React. If you are looking for the ba
 - [x] Comment
 - [x] View Profile
 - [x] Light theme / Dim theme / Dark theme
-- [ ] Search
-- [ ] Edit Profile
-- [ ] Retweet
+- [x] Search
+- [x] Edit Profile
+- [x] Retweet
 
 ## :cd: How to run local
 
